@@ -2,5 +2,7 @@
   "name": "chcp-manual-demo",
   "app_id": "",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }

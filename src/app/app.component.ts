@@ -5,6 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 
+declare var chcp;
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -18,6 +20,26 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+    this.bindEvent();
   }
+
+    bindEvent(){
+      document.addEventListener('chcp_updateLoadFailed', this.onUpdateLoadError, false);
+    }
+
+    onUpdateLoadError(eventData){
+      let error = eventData.detail.error;
+      if (error && error.code == chcp.error.APPLICATION_BUILD_VERSION_TOO_LOW) {
+        console.log('Native side update required');
+        let dialogMessage = '发现新版本，请下载更新。';
+        chcp.requestApplicationUpdate(dialogMessage, this.userWentToStoreCallback, this.userDeclinedRedirectCallback);
+      }
+    }
+
+    userWentToStoreCallback(){}
+
+    userDeclinedRedirectCallback(){}
+
+
 }
 

@@ -78,6 +78,7 @@
     </platform>
     <chcp>
         <config-file url="http://123.207.88.149/www/chcp.json" />
+        <native-interface version="1" />
     </chcp>
     <engine name="android" spec="^6.1.2" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />

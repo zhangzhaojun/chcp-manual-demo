@@ -1,7 +1,8 @@
 {
   "name": "chcp-manual-demo",
   "ios_identifier": "",
-  "android_identifier": "",
+  "android_identifier": "http://www.zhikeji.top",
   "update": "resume",
-  "content_url": "http://123.207.88.149/www"
+  "content_url": "http://123.207.88.149/www",
+  "min_native_interface": 2
 }

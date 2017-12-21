@@ -5,7 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 
-declare var chcp;
+declare var chcp;//声明插件变量，外壳更新需要
 
 @Component({
   templateUrl: 'app.html'
@@ -20,9 +20,9 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
-    this.bindEvent();
+    this.bindEvent();//用于外壳更新
   }
-
+//以下代码用于外壳更新，相关函数作用请参见插件官网说明
     bindEvent(){
       document.addEventListener('chcp_updateLoadFailed', this.onUpdateLoadError, false);
     }
